@@ -1,0 +1,417 @@
+/* Musika - Enhanced Styling */
+
+/* App root */
+.app-root {
+    background-color: @window_bg_color;
+}
+
+/* Search entry styling */
+.search-entry {
+    border-radius: 24px;
+}
+
+/* Album covers */
+.album-cover {
+    border-radius: 8px;
+}
+
+.album-cover-small {
+    border-radius: 6px;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.album-cover-large {
+    border-radius: 16px;
+}
+
+.album-cover-frame {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.album-cover-image {
+    border-radius: 8px;
+    background-color: alpha(@theme_fg_color, 0.05);
+}
+
+.album-cover-small .album-cover-image {
+    border-radius: 6px;
+}
+
+.album-cover-large .album-cover-image {
+    border-radius: 16px;
+}
+
+/* Song cards */
+.song-card {
+    transition: background-color 200ms;
+}
+
+.song-card:hover {
+    background-color: alpha(@accent_color, 0.08);
+}
+
+/* Mini player */
+.mini-player {
+    background-color: @headerbar_bg_color;
+    border-top: 1px solid alpha(@borders, 0.5);
+}
+
+.mini-progress {
+    margin: 0;
+    padding: 0;
+    min-height: 3px;
+}
+
+.mini-progress trough {
+    min-height: 3px;
+    border-radius: 0;
+}
+
+.mini-progress highlight {
+    min-height: 3px;
+    border-radius: 0;
+}
+
+.mini-progress slider {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* ==========================================
+   NOW PLAYING VIEW - MINIMALIST DESIGN
+   ========================================== */
+
+.now-playing-view {
+    background: transparent;
+}
+
+.now-playing-background {
+    background: linear-gradient(
+        160deg,
+        alpha(@accent_bg_color, 0.08) 0%,
+        @window_bg_color 50%
+    );
+    transition: background 600ms ease;
+}
+
+/* Toggle buttons at top */
+.toggle-row {
+    margin-bottom: 24px;
+}
+
+.toggle-button {
+    border-radius: 50%;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    opacity: 0.6;
+    transition: all 200ms ease;
+}
+
+.toggle-button:hover {
+    opacity: 0.85;
+    background-color: alpha(@theme_fg_color, 0.06);
+}
+
+.toggle-button:checked {
+    opacity: 1;
+    background-color: alpha(@accent_color, 0.12);
+    color: @accent_color;
+}
+
+/* Side panels */
+.side-panel {
+    border-radius: 20px;
+    background: alpha(@card_bg_color, 0.4);
+    padding: 20px;
+    border: 1px solid alpha(@borders, 0.08);
+}
+
+.center-panel {
+    padding: 40px;
+}
+
+.panel-title {
+    font-weight: 600;
+    font-size: 0.9em;
+    opacity: 0.7;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/* Art container */
+.art-container {
+    padding: 0;
+}
+
+/* Album cover - clean rounded rectangle */
+.cover-container {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 320px;
+    min-height: 320px;
+    max-width: 320px;
+    max-height: 320px;
+    border: none;
+    background: alpha(@theme_fg_color, 0.04);
+}
+
+.cover-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.3);
+}
+
+.now-playing-cover-art {
+    border-radius: 16px;
+    background-color: alpha(@theme_fg_color, 0.04);
+    min-width: 320px;
+    min-height: 320px;
+    max-width: 320px;
+    max-height: 320px;
+    -gtk-icon-size: 320px;
+}
+
+/* Track info */
+.now-playing-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 2px;
+}
+
+.now-playing-artist {
+    font-size: 1em;
+    opacity: 0.55;
+    font-weight: 400;
+}
+
+/* Playback controls */
+.playback-controls {
+    margin-top: 20px;
+}
+
+.control-button {
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    transition: all 180ms ease;
+    padding: 0;
+    opacity: 0.8;
+}
+
+.control-button:hover {
+    transform: scale(1.08);
+    opacity: 1;
+    background-color: alpha(@theme_fg_color, 0.06);
+}
+
+.control-button:active {
+    transform: scale(0.95);
+}
+
+.control-button-small {
+    min-width: 44px;
+    min-height: 44px;
+    opacity: 0.5;
+}
+
+.control-button-small:hover {
+    opacity: 0.8;
+}
+
+.control-button-small:checked {
+    opacity: 1;
+    color: @accent_color;
+}
+
+.control-button-secondary {
+    min-width: 52px;
+    min-height: 52px;
+}
+
+.play-button {
+    min-width: 64px;
+    min-height: 64px;
+    background: @accent_color;
+    color: @accent_fg_color;
+    opacity: 1;
+    box-shadow: 0 4px 20px alpha(@accent_color, 0.35);
+}
+
+.play-button:hover {
+    background: shade(@accent_color, 1.08);
+    box-shadow: 0 6px 28px alpha(@accent_color, 0.45);
+    transform: scale(1.06);
+}
+
+/* Progress bar */
+.progress-container {
+    margin-top: 24px;
+}
+
+.now-playing-progress {
+    margin: 0 0 8px 0;
+}
+
+.now-playing-progress trough {
+    min-height: 4px;
+    border-radius: 2px;
+    background-color: alpha(@theme_fg_color, 0.1);
+}
+
+.now-playing-progress highlight {
+    min-height: 4px;
+    border-radius: 2px;
+    background: @accent_color;
+}
+
+.now-playing-progress slider {
+    min-width: 14px;
+    min-height: 14px;
+    border-radius: 50%;
+    background: @accent_color;
+    border: 2px solid @window_bg_color;
+    box-shadow: 0 2px 8px alpha(@accent_color, 0.4);
+    transition: all 150ms ease;
+}
+
+.now-playing-progress slider:hover {
+    transform: scale(1.15);
+    box-shadow: 0 3px 12px alpha(@accent_color, 0.5);
+}
+
+.time-label {
+    font-size: 0.8em;
+    opacity: 0.45;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+}
+
+/* Queue panel */
+.queue-list {
+    background: transparent;
+}
+
+.queue-list row {
+    border-radius: 10px;
+    margin: 2px 0;
+    padding: 4px;
+    transition: all 150ms ease;
+}
+
+.queue-list row:hover {
+    background-color: alpha(@theme_fg_color, 0.04);
+}
+
+/* Currently playing item in queue */
+.queue-item-playing {
+    background-color: alpha(@accent_color, 0.12);
+}
+
+.queue-item-playing:hover {
+    background-color: alpha(@accent_color, 0.16);
+}
+
+/* Lyrics panel */
+.lyrics-list {
+    background: transparent;
+}
+
+.lyrics-list row {
+    border-radius: 8px;
+}
+
+.lyrics-line {
+    font-size: 0.95em;
+    padding: 10px 14px;
+    opacity: 0.4;
+    transition: all 250ms ease;
+    line-height: 1.7;
+}
+
+.lyrics-line-active .lyrics-line {
+    opacity: 1;
+    font-weight: 600;
+    color: @accent_color;
+    font-size: 1em;
+    background: alpha(@accent_color, 0.08);
+    border-radius: 8px;
+}
+
+.lyrics-placeholder {
+    padding: 24px 16px;
+    opacity: 0.4;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Smooth scrolling */
+.side-panel scrolledwindow {
+    border-radius: 12px;
+}
+
+.lyrics-list {
+    scroll-behavior: smooth;
+}
+
+/* Separator styling */
+separator {
+    background: alpha(@borders, 0.2);
+    min-height: 1px;
+}
+
+/* Loading spinner */
+spinner {
+    opacity: 0.8;
+    color: @accent_color;
+}
+
+/* Caption styles */
+.caption {
+    font-size: 0.85em;
+}
+
+.caption-heading {
+    font-weight: 500;
+}
+
+/* Empty states */
+.empty-state {
+    padding: 48px;
+}
+
+.empty-state-icon {
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .art-container {
+        padding: 24px;
+    }
+
+    .now-playing-cover-art {
+        min-width: 200px;
+        min-height: 200px;
+    }
+
+    .now-playing-title {
+        font-size: 1.3em;
+    }
+
+    .control-button {
+        min-width: 56px;
+        min-height: 56px;
+    }
+
+    .play-button {
+        min-width: 56px;
+        min-height: 56px;
+    }
+}
